@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -8,7 +10,11 @@ public class Player : MonoBehaviour
     //Input System, Rigidbody ForceMode
 
     public float moveSpeed = 10f; //움직임 속도
-    public float jumpPower = 5f;
+    public float jumpPower = 5f; //점프 속도
+
+    public int hp = 10; //플레이어 체력
+    public int maxHp = 10;
+    public Image hpBar; //플레이어 체력 이미지 (Bar)
 
     private Rigidbody rb; //Rigidbody 컴포넌트를 스크립트에서 사용하기 위해 저장
 
@@ -17,6 +23,9 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        hp = maxHp;
+        UpdateHpBar();
     }
 
     private void FixedUpdate()
@@ -64,6 +73,27 @@ public class Player : MonoBehaviour
         {
             isGround = true;
             //Debug.Log("충돌");
+        }
+    }
+
+    public void TakeDamage(int damage) //데미지를 입으면
+    {
+        hp -= damage; //피를 깎고
+        Debug.Log(damage);
+
+        if(hp < 0)
+        {
+            hp = 0;
+            Debug.Log("체력 0");
+        }
+        UpdateHpBar(); //체력바 반영
+    }
+
+    public void UpdateHpBar() //체력바 변동
+    {
+        if(hpBar != null)
+        {
+            hpBar.fillAmount = (float)hp / maxHp; //체력바를 깎음.
         }
     }
 }
