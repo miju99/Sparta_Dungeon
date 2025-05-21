@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -19,6 +18,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb; //Rigidbody 컴포넌트를 스크립트에서 사용하기 위해 저장
 
     public bool isGround = false; //점프 시 바닥에서만 가능하게
+    public bool isJump = false; //점프 오브젝트와 충돌 시 점프하도록
 
     private void Start()
     {
@@ -55,6 +55,11 @@ public class Player : MonoBehaviour
             isGround = false; //그라운드 바꿔주기 = 무한 점프 방지
             //Debug.Log("점프");
         }
+        if (isJump)
+        {
+            rb.AddForce(Vector3.up * 20, ForceMode.Impulse); //크게 점프!
+            isJump = false;
+        }
         if (force != Vector3.zero || !isGround) //값이 있다면 (키가 눌려지고 있으면)
         {
             force = force.normalized * moveSpeed; //속도 주기 (유지)
@@ -73,6 +78,18 @@ public class Player : MonoBehaviour
         {
             isGround = true;
             //Debug.Log("충돌");
+        }
+
+        if (collision.gameObject.CompareTag("JumpObstacle"))
+        {
+            foreach (ContactPoint contactPoint in collision.contacts) //충돌 위치(contactPoint) 순회
+            {
+                if (Vector3.Dot(contactPoint.normal, Vector3.up) > 0.5f) //충돌 위치가 위쪽이라면
+                {
+                    isJump = true;
+                    break;
+                }
+            }
         }
     }
 

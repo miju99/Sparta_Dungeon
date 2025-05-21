@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a750b882c7026dd45a84de8b9bb1e913, type: 3}
+  m_Name: Coke
+  m_EditorClassIdentifier: 
+  itemName: "\uCF5C\uB77C"
+  explanation: "\uC5BC\uC74C 2\uC54C\uC774 \uB744\uC6CC\uC9C4 \uC81C\uB85C\uCF5C\uB77C.
+    \uB9C8\uC2DC\uBA74 \uC2DC\uC6D0\uD574\uC9C4\uB2E4."
+  dropPrefab: {fileID: 5807824553991578160, guid: 01567287adef5c24ca1d226a66ac1c9e, type: 3}
