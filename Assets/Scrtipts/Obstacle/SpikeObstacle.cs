@@ -2,18 +2,24 @@ using UnityEngine;
 
 public class SpikeObstacle : MonoBehaviour
 {
-
     public int damage = 1;
+    public float timer = 0f;
+    public float actionNumber = 1f;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (Time.time - timer >= actionNumber)
         {
-            Player player = collision.gameObject.GetComponent<Player>();
-            if(player != null)
+            timer = Time.time;
+
+            if (collision.gameObject.CompareTag("Player"))
             {
-                player.TakeDamage(damage);
-                Debug.Log("데미지 들어가는 중");
+                Player player = collision.gameObject.GetComponent<Player>();
+                if (player != null)
+                {
+                    player.TakeDamage(damage);
+                    Debug.Log("데미지 들어가는 중");
+                }
             }
         }
     }
