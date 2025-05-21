@@ -14,6 +14,8 @@ public class Interaction : MonoBehaviour
     public TextMeshProUGUI itemNameText;
     public TextMeshProUGUI itemDescribeText;
 
+    public static GameObject selectObject;
+
     private void Start()
     {
         Explanation.SetActive(false);
@@ -48,9 +50,16 @@ public class Interaction : MonoBehaviour
                 if (item != null && item.ItemData != null)
                 {
                     Debug.Log("아이템 이름 : " + item.ItemData.itemName);
+
                     itemNameText.text = item.ItemData.itemName;
                     itemDescribeText.text = item.ItemData.explanation;
                     Explanation.SetActive(true);
+
+                    if (Input.GetMouseButton(0))
+                    {
+                        selectObject = hit.collider.gameObject;
+                        Debug.Log(selectObject.name);
+                    }
                 }
             }
             else if (!hit.collider.CompareTag("Object"))

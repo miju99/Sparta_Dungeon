@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: "\uD504\uB77C\uC774\uD32C"
   explanation: "\uACE0\uAE30 \uAD7D\uAE30 \uC804\uC6A9 \uD504\uB77C\uC774\uD32C."
   dropPrefab: {fileID: 380084028871135659, guid: bd3720d77ae78e143b0fef09cba10cce, type: 3}
+  icon: {fileID: 21300000, guid: 0cd81fc765fe8ba4ab0eb4486203cace, type: 3}
