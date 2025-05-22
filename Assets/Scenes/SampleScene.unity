@@ -1240,9 +1240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444675a6b046b22438a4d75be55179e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 10
   jumpPower: 5
-  hp: 0
+  hp: 10
   maxHp: 10
   hpBar: {fileID: 2057170082}
   isGround: 0

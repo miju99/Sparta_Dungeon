@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class Interaction : MonoBehaviour
 {
@@ -80,7 +81,11 @@ public class Interaction : MonoBehaviour
                         }
                         if(item.ItemData.type == ItemType.DEBUFF)
                         {
-                            player.moveSpeed -= 5;
+                            DebuffPotion(5, 3f);
+                            Debug.Log("Speed 감소");
+
+                            Destroy(selectObject);
+                            selectObject = null;
                         }
                     }
                 }
@@ -94,5 +99,21 @@ public class Interaction : MonoBehaviour
         {
             Explanation.SetActive(false);
         }
+    }
+
+    private void DebuffPotion(float power, float minute)
+    {
+        StartCoroutine(DebuffMoveSpeed(power, minute));
+    }
+    private IEnumerator DebuffMoveSpeed(float power, float minute)
+    {
+        Player player = GetComponent<Player>();
+        float originSpeed = player.moveSpeed;
+
+        player.moveSpeed -= power;
+        Debug.Log("디버프 속도 : " + player.moveSpeed);
+        yield return new WaitForSeconds(minute);
+        player.moveSpeed = originSpeed;
+        Debug.Log("기존 속도 : " + player.moveSpeed);
     }
 }
