@@ -7,8 +7,6 @@ public class Inventory : MonoBehaviour
     public Image[] inventorySlots = new Image[4];
     private GameObject[] items = new GameObject[4];
 
-    private bool itemSelect = false; //슬롯 중복 방지
-
     private void Start()
     {
         inventory.SetActive(false);

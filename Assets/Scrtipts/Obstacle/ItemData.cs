@@ -12,6 +12,7 @@ public class ItemData : ScriptableObject
 }
 public enum ItemType
 {
-    potion,
-    None
+    BUFF,
+    NONE,
+    DEBUFF
 }

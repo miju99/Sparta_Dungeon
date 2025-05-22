@@ -58,6 +58,30 @@ public class Interaction : MonoBehaviour
                     {
                         selectObject = hit.collider.gameObject;
                         Debug.Log(selectObject.name);
+
+                        Player player = GetComponent<Player>();
+
+                        if (item.ItemData.type == ItemType.BUFF)
+                        {
+                            if(player != null)
+                            {
+                                player.hp += 2;
+                                if(player.hp > player.maxHp)
+                                {
+                                    player.hp = player.maxHp;
+                                }
+
+                                player.UpdateHpBar();
+                                Debug.Log("HP È¸º¹");
+
+                                Destroy(selectObject);
+                                selectObject = null;
+                            }
+                        }
+                        if(item.ItemData.type == ItemType.DEBUFF)
+                        {
+                            player.moveSpeed -= 5;
+                        }
                     }
                 }
             }

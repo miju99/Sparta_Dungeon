@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: "\uACE0\uAE30"
   explanation: "\uBD80\uC704\uB97C \uC54C \uC218 \uC5C6\uB294 \uACE0\uAE30. \uAD6C\uC6CC\uBA39\uC744
-    \uC218 \uC788\uB2E4."
+    \uC218 \uC788\uB2E4. \uC870\uB9AC \uD6C4 \uC12D\uCDE8 \uC2DC HP +3, \uBE44\uC870\uB9AC
+    \uC12D\uCDE8 \uC2DC 3\uCD08\uB3D9\uC548 Speed -5   "
   dropPrefab: {fileID: 4814580438465926316, guid: c957538b74458e74e8a45f2002f1c25a, type: 3}
   icon: {fileID: 21300000, guid: 014ccdf56e913c84cb3199f5f2dd333d, type: 3}
   type: 1
