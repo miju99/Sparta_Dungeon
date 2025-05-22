@@ -38,11 +38,8 @@
 | 버프 / 디버프 적용 | `Interaction.cs` | `Coroutine` + `ItemData.type` |
 | 오브젝트 설명 UI | `Interaction.cs` | `TextMeshProUGUI` 제어 |
 | 점프대 | `Player.cs` | `OnCollisionEnter` + `isJump` |
-| 움직이는 발판 | `MovingPlatform.cs`| `Vector3.MoveTowards` |
-| 발판 탑승 처리 | `Player.cs` | `transform.SetParent()` |
-| 인벤토리 UI 토글 | `Inventory.cs` | `Input.GetKey(KeyCode.I)` |
-| 인벤토리 초기화  | `Inventory.cs` | `ClearSlot()` |
-| 오브젝트 색 변경 | `ColorTest.cs` | `Renderer.material.color` |
+| 움직이는 플랫폼 | `MovingPlatform.cs`| `Vector3.MoveTowards` |
+| 플랫 탑승 처리 | `Player.cs` | `transform.SetParent()` |
 | 사운드 재생 | `Sound.cs` | `PlaySFX(string clipName)` |
 
 ## 기술 스택
