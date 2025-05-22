@@ -5,7 +5,7 @@ public class Inventory : MonoBehaviour
 {
     public GameObject inventory;
     public Image[] inventorySlots = new Image[4];
-    private GameObject[] items = new GameObject[4];
+    //private GameObject[] items = new GameObject[4];
 
     private void Start()
     {

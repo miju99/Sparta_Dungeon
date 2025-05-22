@@ -6,19 +6,15 @@ public class Interaction : MonoBehaviour
 {
     private UnityEngine.Camera mCamera;
 
-    [Header("Info")]
-    public string displayName;
-    public string descrption;
-
     public GameObject Explanation;
-    public TextMeshProUGUI itemNameText;
+    public TextMeshProUGUI itemNameText; 
     public TextMeshProUGUI itemDescribeText;
 
     public static GameObject selectObject;
 
     private void Start()
     {
-        Explanation.SetActive(false);
+        Explanation.SetActive(false); //설명 UI 안보이게
 
         mCamera = GetComponentInChildren<UnityEngine.Camera>();
 
@@ -62,7 +58,7 @@ public class Interaction : MonoBehaviour
 
                         Player player = GetComponent<Player>();
 
-                        if (item.ItemData.type == ItemType.BUFF)
+                        if (item.ItemData.type == ItemType.BUFF) //사과
                         {
                             if(player != null)
                             {
@@ -80,7 +76,7 @@ public class Interaction : MonoBehaviour
                                 selectObject = null;
                             }
                         }
-                        if(item.ItemData.type == ItemType.DEBUFF)
+                        if(item.ItemData.type == ItemType.DEBUFF) //스테이크
                         {
                             DebuffPotion(5, 3f);
                             Debug.Log("Speed 감소");
@@ -106,7 +102,8 @@ public class Interaction : MonoBehaviour
     {
         StartCoroutine(DebuffMoveSpeed(power, minute));
     }
-    private IEnumerator DebuffMoveSpeed(float power, float minute)
+
+    private IEnumerator DebuffMoveSpeed(float power, float minute) //SpikeObstacle위에 올라갔을 때 지속뎀
     {
         Player player = GetComponent<Player>();
         float originSpeed = player.moveSpeed;

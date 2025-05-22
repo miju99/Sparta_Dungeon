@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ColorTest : MonoBehaviour
+public class ColorTest : MonoBehaviour //SpikeObstacle »ö º¯°æ
 {
     private Renderer[] childRenderers;
 

@@ -12,8 +12,8 @@ public class ItemData : ScriptableObject
 }
 public enum ItemType
 {
-    BUFF,
-    NONE,
-    DEBUFF,
-    SLEEP
+    BUFF, //HP 증가
+    NONE, //아무것도 없음
+    DEBUFF, //속도 저하
+    SLEEP //낮 -> 밤, HP 회복
 }

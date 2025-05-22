@@ -1,4 +1,3 @@
-using TreeEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -111,7 +110,7 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("MovingPlatform"))
         {
-            transform.SetParent(collision.transform);
+            transform.SetParent(collision.transform); //플레이어도 움직이게
         }
     }
 
@@ -148,7 +147,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void UpdateSTBar(int power)
+    public void UpdateSTBar(int power) //스태미나바 변동
     {
         if (stBar != null)
         {
