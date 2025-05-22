@@ -16,3 +16,5 @@ MonoBehaviour:
   explanation: "\uC544\uB291\uD55C \uD734\uC2DD\uACF5\uAC04. \uD734\uC2DD \uC2DC
     HP\uB97C \uCC44\uC6B8 \uC218 \uC788\uB2E4."
   dropPrefab: {fileID: 7417412822730282863, guid: d404bfa542aeb41499b831558519f346, type: 3}
+  icon: {fileID: 0}
+  type: 1

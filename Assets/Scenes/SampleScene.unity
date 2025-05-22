@@ -1277,10 +1277,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 1827425924}
-  inventortySlot1: {fileID: 0}
-  inventortySlot2: {fileID: 0}
-  inventortySlot3: {fileID: 0}
-  inventortySlot4: {fileID: 0}
+  inventorySlots:
+  - {fileID: 829156590}
+  - {fileID: 1838252524}
+  - {fileID: 1558861870}
+  - {fileID: 123055090}
 --- !u!1 &601708578
 GameObject:
   m_ObjectHideFlags: 0

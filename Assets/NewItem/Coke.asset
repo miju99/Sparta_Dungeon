@@ -17,3 +17,4 @@ MonoBehaviour:
     \uB9C8\uC2DC\uBA74 \uC2DC\uC6D0\uD574\uC9C4\uB2E4."
   dropPrefab: {fileID: 5807824553991578160, guid: 01567287adef5c24ca1d226a66ac1c9e, type: 3}
   icon: {fileID: 21300000, guid: 64aeab6610e6c3142bf18b0fab425425, type: 3}
+  type: 1

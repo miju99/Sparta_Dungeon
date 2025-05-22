@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class Interaction : MonoBehaviour
@@ -41,7 +40,7 @@ public class Interaction : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.CompareTag("Object")) //태그가 오브젝트 인 오브젝트들만
+            if (hit.collider.CompareTag("Object")) //태그가 오브젝트인 오브젝트들만
             {
                 Debug.Log("충돌 " + hit.collider.name);
 
