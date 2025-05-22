@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     public int maxHp;
     public Image hpBar; //플레이어 체력 이미지 (Bar)
 
+    public float st;
+    public int maxSt;
+    public Image stBar;
+
     private Rigidbody rb; //Rigidbody 컴포넌트를 스크립트에서 사용하기 위해 저장
 
     public bool isGround = false; //점프 시 바닥에서만 가능하게
@@ -26,6 +30,8 @@ public class Player : MonoBehaviour
 
         hp = maxHp;
         UpdateHpBar();
+
+        st = maxSt;
     }
 
     private void FixedUpdate()
@@ -48,18 +54,22 @@ public class Player : MonoBehaviour
         {
             force += Vector3.forward;
         }
-        if (Input.GetKey(KeyCode.Space) && isGround) //점프 키 입력 및 그라운드 true
+
+        if (st >= 2 && Input.GetKey(KeyCode.Space) && isGround) //점프 키 입력 및 그라운드 true
         {
             //force += Vector3.up * jumpPower; //점프
             rb.AddForce(0, jumpPower, 0, ForceMode.Impulse);
             isGround = false; //그라운드 바꿔주기 = 무한 점프 방지
-            //Debug.Log("점프");
+                              //Debug.Log("점프");
+            UpdateSTBar(2);
         }
-        if (isJump)
+        if (st >= 5f && isJump)
         {
             rb.AddForce(Vector3.up * 20, ForceMode.Impulse); //크게 점프!
             isJump = false;
+            UpdateSTBar(5);
         }
+
         if (force != Vector3.zero || !isGround) //값이 있다면 (키가 눌려지고 있으면)
         {
             force = force.normalized * moveSpeed; //속도 주기 (유지)
@@ -69,7 +79,12 @@ public class Player : MonoBehaviour
         {
             rb.velocity = Vector3.zero; //멈춤
         }
-        
+        if (st < maxSt)
+        {
+            st += Time.deltaTime * 0.5f;
+            st = Mathf.Clamp(st, 0, maxSt);
+            stBar.fillAmount = (float)st / maxSt;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -111,6 +126,16 @@ public class Player : MonoBehaviour
         if(hpBar != null)
         {
             hpBar.fillAmount = (float)hp / maxHp; //체력바를 깎음.
+        }
+    }
+
+    public void UpdateSTBar(int power)
+    {
+        if(stBar != null)
+        {
+            st -= power;
+            st = Mathf.Clamp(st, 0, maxSt);
+            stBar.fillAmount = (float)st / maxSt;
         }
     }
 }
