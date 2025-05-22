@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
 
         if (st >= 2 && Input.GetKey(KeyCode.Space) && isGround) //점프 키 입력 및 그라운드 true
         {
+            FindObjectOfType<Sound>().PlaySFX("DM-CGS-41");
             //force += Vector3.up * jumpPower; //점프
             rb.AddForce(0, jumpPower, 0, ForceMode.Impulse);
             isGround = false; //그라운드 바꿔주기 = 무한 점프 방지

@@ -14,5 +14,6 @@ public enum ItemType
 {
     BUFF,
     NONE,
-    DEBUFF
+    DEBUFF,
+    SLEEP
 }

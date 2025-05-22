@@ -73,6 +73,7 @@ public class Interaction : MonoBehaviour
                                 }
 
                                 player.UpdateHpBar();
+                                FindObjectOfType<Sound>().PlaySFX("DM-CGS-45");
                                 Debug.Log("HP 회복");
 
                                 Destroy(selectObject);
@@ -110,6 +111,7 @@ public class Interaction : MonoBehaviour
         Player player = GetComponent<Player>();
         float originSpeed = player.moveSpeed;
 
+        FindObjectOfType<Sound>().PlaySFX("DM-CGS-18");
         player.moveSpeed -= power;
         Debug.Log("디버프 속도 : " + player.moveSpeed);
         yield return new WaitForSeconds(minute);

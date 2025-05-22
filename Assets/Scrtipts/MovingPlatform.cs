@@ -3,7 +3,6 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     float time = 0f;
-    float actionTime = 3f;
 
     public GameObject FinishTargetPosition;
     public GameObject StartTargetPosition;
