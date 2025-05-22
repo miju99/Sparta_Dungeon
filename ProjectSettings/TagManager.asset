@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - JumpObstacle
   - Object
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

@@ -1,3 +1,4 @@
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class Player : MonoBehaviour
     //플레이어 점프 (Space)
     //Input System, Rigidbody ForceMode
 
-    public float moveSpeed ; //움직임 속도
+    public float moveSpeed; //움직임 속도
     public float jumpPower; //점프 속도
 
     public int hp; //플레이어 체력
@@ -106,6 +107,23 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            transform.SetParent(collision.transform);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            /*foreach (ContactPoint contact in collision.contacts)
+            {
+                if (Vector3.Dot(contact.normal, Vector3.up) > 0.5f)
+                {*/
+            transform.SetParent(null);
+        }
     }
 
     public void TakeDamage(int damage) //데미지를 입으면
@@ -113,7 +131,7 @@ public class Player : MonoBehaviour
         hp -= damage; //피를 깎고
         Debug.Log(damage);
 
-        if(hp < 0)
+        if (hp < 0)
         {
             hp = 0;
             Debug.Log("체력 0");
@@ -123,7 +141,7 @@ public class Player : MonoBehaviour
 
     public void UpdateHpBar() //체력바 변동
     {
-        if(hpBar != null)
+        if (hpBar != null)
         {
             hpBar.fillAmount = (float)hp / maxHp; //체력바를 깎음.
         }
@@ -131,7 +149,7 @@ public class Player : MonoBehaviour
 
     public void UpdateSTBar(int power)
     {
-        if(stBar != null)
+        if (stBar != null)
         {
             st -= power;
             st = Mathf.Clamp(st, 0, maxSt);
