@@ -3,7 +3,7 @@
 
 ## 영상
 
--이동
+- 이동
 
 ![이동점프점프대](https://github.com/user-attachments/assets/6d1f0e1b-32e1-4254-b2b7-4d0d0cf19a9e)
 
