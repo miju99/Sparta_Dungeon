@@ -3,6 +3,27 @@
 
 ## 영상
 
+-이동
+
+![이동점프점프대](https://github.com/user-attachments/assets/6d1f0e1b-32e1-4254-b2b7-4d0d0cf19a9e)
+
+- 플레이어 HP
+
+![HP](https://github.com/user-attachments/assets/a35b36a3-5e97-4a83-a75e-91b5cec7fc02)
+
+- 오브젝트 설명 UI
+  
+![오브젝트설명](https://github.com/user-attachments/assets/35c65752-78c8-4bf8-81f1-1207cdca51b5)
+
+- 속도
+  
+![속도](https://github.com/user-attachments/assets/cdc2f27d-1c52-4d90-a5e4-00ac11917e07)
+
+
+- 움직이는 플랫폼
+
+![플랫폼](https://github.com/user-attachments/assets/7c53ba0b-8ba3-4715-a67d-3c58df1742d8)
+
 ## 설치 방법
 `git clone https://github.com/miju99/Sparta_Meta.git`
 > Unity 2022.3.17f1 이상에서 테스트됨
