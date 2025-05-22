@@ -8,11 +8,11 @@ public class Player : MonoBehaviour
     //플레이어 점프 (Space)
     //Input System, Rigidbody ForceMode
 
-    public float moveSpeed = 10f; //움직임 속도
-    public float jumpPower = 5f; //점프 속도
+    public float moveSpeed ; //움직임 속도
+    public float jumpPower; //점프 속도
 
-    public int hp = 10; //플레이어 체력
-    public int maxHp = 10;
+    public int hp; //플레이어 체력
+    public int maxHp;
     public Image hpBar; //플레이어 체력 이미지 (Bar)
 
     private Rigidbody rb; //Rigidbody 컴포넌트를 스크립트에서 사용하기 위해 저장
