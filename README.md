@@ -27,7 +27,7 @@
 ![플랫폼](https://github.com/user-attachments/assets/7c53ba0b-8ba3-4715-a67d-3c58df1742d8)
 
 ## 설치 방법
-`git clone https://github.com/miju99/Sparta_Meta.git`
+`git clone https://github.com/miju99/Sparta_Dungeon.git`
 > Unity 2022.3.17f1 이상에서 테스트됨
 
 ## 사용 방법
