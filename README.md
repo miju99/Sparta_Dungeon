@@ -6,6 +6,8 @@
 - 이동
 
 ![이동점프점프대](https://github.com/user-attachments/assets/6d1f0e1b-32e1-4254-b2b7-4d0d0cf19a9e)
+<br>
+▷ 점프 / 점프대 이용 시 요구 스태미나가 부족하면 동작하지 않음
 
 - 플레이어 HP
 
